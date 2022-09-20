@@ -27,18 +27,18 @@ AIGUILLESEC.style.transform = `rotate(${secRotateRate}deg)`;
 
 // Déplacer les aiguilles
 function demarrerLaMontre() {
-    // next 4 lines to calculate the hour at each interval
-    date = new Date();
-    hour = date.getHours();
-    min = date.getMinutes();
-    sec = date.getSeconds();
-    // next 2 lines to make the needles moving each sec
-    hourRotateRate += 360 / (3600 * 12);
-    minRotateRate += 360 / 3600;
-    secRotateRate = (360 / 60) * sec;
-    AIGUILLEHR.style.transform = `rotate(${hourRotateRate}deg)`;
-    AIGUILLEMIN.style.transform = `rotate(${minRotateRate}deg)`;
-    AIGUILLESEC.style.transform = `rotate(${secRotateRate}deg)`;
+  // next 4 lines to calculate the hour at each interval
+  //   date = new Date();
+  //   hour = date.getHours();
+  //   min = date.getMinutes();
+  //   sec = date.getSeconds();
+  // next 2 lines to make the needles moving each sec
+  hourRotateRate += 360 / (3600 * 12);
+  minRotateRate += 360 / 3600;
+  secRotateRate += 360 / 60;
+  AIGUILLESEC.style.transform = `rotate(${secRotateRate}deg)`;
+  AIGUILLEHR.style.transform = `rotate(${hourRotateRate}deg)`;
+  AIGUILLEMIN.style.transform = `rotate(${minRotateRate}deg)`;
 }
 // Executer la fonction chaque second
 var interval = setInterval(demarrerLaMontre, 1000);
